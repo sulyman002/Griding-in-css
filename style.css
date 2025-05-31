@@ -1,0 +1,51 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+:root {
+    /* Color Variables */
+    --purple-100: hsl(254, 88%, 90%);
+    --purple-500: hsl(256, 67%, 59%);
+
+    --Yellow-100: hsl(31, 66%, 93%);
+    --Yellow-500: hsl(39, 100%, 71%);
+
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+
+    /* Font Variables */
+    --fs: 18px;
+
+    /* font weight */
+
+    --fw-regular: 400;
+    --fw-bold: 500;
+}
+
+
+
+
+
+
+
+/* @media screen and (max-width: 375px) {
+
+    
+}
+@media screen and (max-width: 764px) {
+
+    
+}
+
+@media screen and (max-width: 1024px) {
+
+    
+}
+@media screen and (max-width: 1440px) {
+
+    
+} */
