@@ -1,9 +1,48 @@
+/* 
+I notice for the project i want to learn am going to need a bunch of class name, which may cause me to run into specisifity problem in css.
+
+So to get rid of that, i want to learn how to use @layer  in css. which is sub-divided into three.
+user agent styles
+user styles
+author styles (This the only one we have access to).
+     This author styles is the one with the most high specitifity and its also sub divideinto four 4
+reset
+base
+layout
+components
+
+N.B: this author do/make its specitifity based on the on that come first 
+Example: 
+@layer components{
+    .box{
+         font-size: 15px;
+     }
+}
+
+@layer reset{
+    .box{
+         font-size: 15px;
+     }
+}
+
+
+For this type of situation, the RESET own will be more of high specitifity.
+
+TO GET RID OF THESE, like to set the specitifity to our own taste, 
+we can do it like this
+
+@layer framework, reset, base, layout, components, utilities;
+
+*/
+
+
 * {
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto Mono", monospace;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.1;
 }
 
 :root {
@@ -19,27 +58,155 @@
 
     /* Font Variables */
 
-    --fs-xs: clamp(0.75rem, 1vw + 0.25rem, 1rem);
-    --fs-sm: clamp(0.875rem, 1vw + 0.375rem, 1.125rem);
-
-    --fs-lg: clamp(1.25rem, 1vw + 0.75rem, 1.5rem);
-
-    --fs-md: clamp(2rem, 3vw, 2.5rem);
-    --fs-xl: clamp(2.5rem, 4vw, 3rem);
-    --fs-xxl: clamp(3rem, 6vw, 5rem);
-
-
-
-
-
+    --fs-sm: 1.125rem;
+    --fs-md: 2.25rem;
+    --fs-xl: 3rem;
+    --fs-xxl: 4rem;
 
     /* Font Weight Variables */
     --fw-light: 300;
     --fw-regular: 400;
     --fw-bold: 500;
+
+    /* General reset */
+
+}
+
+@layer reset {
+
+    h1,
+    h2 {
+        margin: 0;
+        color: var(--cards-tittle-color, #fff);
+        ;
+        font-weight: var(--fw-bold);
+        font-size: var(--cards-heading-size, var(--fs-md));
+        text-wrap: balanced;
+
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+
+
+
+}
+
+/* @layer layout { */
+.card_container {
+    display: grid;
+    gap: 1.5rem;
+    background-color: rgb(207, 188, 188);
+}
+
+.card_container>* {
+    display: grid;
+    background-color: var(--background-cards-color, grey);
+    gap: var(--cards-spacing, 1.875rem);
+    padding: var(--cards-padding, 1.875rem);
+    border-radius: var(--cards-border-radius, 1.25rem);
+    justify-items: var(--cards-horizontal-alignment, center);
+    align-items: var(--cards-vertical-alignment, center);
+    text-align: var(--cards-horizontal-alignment, center);
+    color: var(--cards-text-color, #fff);
+
+    p {
+        font-size: var(--Ps-cards-fs, 1rem);
+    }
+
+
 }
 
 
+.card_container img {
+    max-width: var(--cards-image-max-width, 100%);
+    width: var(--cards-image-max-width, 100%);
+}
+
+
+
+.cards:nth-child(1) {
+    --cards-image-max-width: 60%;
+    --cards-heading-size: var(--fs-xxl);
+    --background-cards-color: var(--purple-500);
+
+    span {
+        color: var(--Yellow-500);
+        font-style: italic;
+    }
+}
+
+.cards:nth-child(2) {
+    --background-cards-color: var(--white);
+    --cards-tittle-color: var(--black);
+    --cards-horizontal-alignment: left;
+
+    img {
+        order: -1;
+        --cards-image-max-width: 100%;
+        filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.3));
+        border-radius: 100vw;
+
+
+    }
+}
+
+
+
+.cards:nth-child(4) {
+    --background-cards-color: var(--purple-100);
+    --cards-tittle-color: var(--black);
+    --cards-text-color: var(--black);
+    text-wrap: balanced;
+}
+
+.cards:nth-child(5) {
+    --background-cards-color: var(--purple-500);
+    --cards-tittle-color: var(--white);
+
+    img {
+        --cards-image-max-width: 85%;
+
+    }
+}
+
+.cards:nth-child(6) {
+    --background-cards-color: var(--white);
+    --cards-tittle-color: var(--black);
+    --cards-text-color: var(--black);
+    --cards-horizontal-alignment: left;
+    --Ps-cards-fs: 1.7rem;
+    --cards-image-max-width: 65%;
+
+}
+
+
+.cards:nth-child(7) {
+    --background-cards-color: var(--Yellow-100);
+    --cards-tittle-color: var(--black);
+    --cards-horizontal-alignment: left;
+    --cards-image-max-width: 55%;
+
+    --cards-padding: 2rem
+}
+
+.cards:nth-child(8) {
+    --background-cards-color: var(--Yellow-500);
+    --cards-tittle-color: var(--black);
+    --cards-text-color: var(--black);
+    --cards-horizontal-alignment: left;
+    --Ps-cards-fs: 1.7rem;
+    --cards-image-max-width: 75%;
+    text-wrap: wrap;
+
+}
+
+/* Image rest */
+
+.card_container {}
 
 
 
