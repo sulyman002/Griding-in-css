@@ -77,7 +77,29 @@ body {
 
 }
 
+/* @layer reset {
 
+    h1,
+    h2 {
+        margin: 0;
+        color: var(--cards-tittle-color, #fff);
+        ;
+        font-weight: var(--fw-bold);
+        font-size: var(--cards-heading-size, var(--fs-md));
+        text-wrap: balanced;
+
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+
+
+
+    
+} */
 
 h1, h2 {
   margin: 0;
@@ -92,6 +114,7 @@ img {
   display: block;
 }
 
+/* @layer layout { */
 .card_container {
     display: grid;
     gap: 1.5rem;
