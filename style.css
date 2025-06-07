@@ -88,6 +88,7 @@ body {
     }
 
     p {
+        margin: 0;
         font-size: var(--card-P-cards-fs, 1rem);
     }
 
@@ -136,6 +137,12 @@ body {
                 "eight two three four"
                 "eight six five five"
             ;
+
+            .cards:nth-child(5) {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+            }
+
         }
 
 
@@ -145,7 +152,7 @@ body {
     .card_container>* {
         display: grid;
         background-color: var(--background-cards-color, grey);
-        gap: var(--cards-spacing, 1.875rem);
+        gap: var(--cards-spacing, .2rem);
         padding: var(--cards-padding, 1.875rem);
         border-radius: var(--cards-border-radius, 1.25rem);
         justify-items: var(--cards-horizontal-alignment, center);
